@@ -4,10 +4,15 @@ stat = "";
 function setup(){
     canvas = createCanvas(640, 420);
     canvas.center();
+ 
+    video = createCapture(VIDEO);
+	video.size(640, 420);
+    video.center();
 }
 function preload(){
-    video = createVideo('video.mp4');
-    video.hide();
+    video = createCapture(VIDEO);
+	video.size(800, 400);
+    video.center();
 }
 function draw(){
     image(video, 0, 0, 480, 380);
@@ -18,8 +23,4 @@ function start(){
 }
 function modelLoaded(){
     console.log("Model Loaded!");
-    stat = true;
-    video.loop();
-    video.speed(1);
-    video.volume(0);
 }
